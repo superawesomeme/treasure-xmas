@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Config ----
   const totalTiles = 36; // 6x6
   // Assets (your latest versions)
-  const trapImg  = '/treasure/images/skull-25.png';
-  const chestImg = '/treasure/images/treasure-25.png';
-  const logoSrc  = '/treasure/images/logo.png';
+  const trapImg  = '/treasure-xmas/images/skull-25.png';
+  const chestImg = '/treasure-xmas/images/treasure-25.png';
+  const logoSrc  = '/treasure-xmas/images/logo.png';
 
   // ---- Game state ----
   let trapCount = 0;
@@ -394,5 +394,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
 
 
