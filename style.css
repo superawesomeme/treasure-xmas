@@ -54,7 +54,7 @@ body {
   grid-template-columns: repeat(var(--cols), 1fr);
   gap: var(--gap);
   padding: var(--gap);
-  background: url('/treasure/images/treasure-map-25.png') center/cover no-repeat;
+  background: url('/treasure-xmas/images/treasure-map-25.png') center/cover no-repeat;
   border-radius: 12px;
   border: none;
   box-shadow: none;
@@ -337,6 +337,7 @@ body.overlay-open .fs-btn{ display: none !important; }
 .confetti-canvas{ position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 
 .hidden{ display: none !important; }
+
 
 
 
