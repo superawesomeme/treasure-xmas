@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Config ----
   const totalTiles = 36; // 6x6
   // Assets (your latest versions)
-  const trapImg  = '/treasure-xmas/images/skull-25.png';
-  const chestImg = '/treasure-xmas/images/treasure-25.png';
-  const logoSrc  = '/treasure-xmas/images/logo.png';
+  const trapImg  = '/treasure/images/skull-25.png';
+  const chestImg = '/treasure/images/treasure-25.png';
+  const logoSrc  = '/treasure/images/logo.png';
 
   // ---- Game state ----
   let trapCount = 0;
-  let Count = 0;
-  let tiles, Indices, trapIndices, s;
+  let treasureCount = 0;
+  let tiles, treasureIndices, trapIndices, treasures;
   let players = [];
   let currentPlayerIndex = 0;
   let turns = 0;
@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
       skipTurn: false
     }));
 
-    // Randomize traps/s per game
+    // Randomize traps/treasures per game
     trapCount = getRandomInt(4, 8);
-    Count = getRandomInt(15, 23);
+    treasureCount = getRandomInt(15, 23);
 
     // Hide overlay, enable board interactions
     gameSetup.classList.add('hidden');
@@ -125,9 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const [min, max] = difficulty === 'easy' ? [1, 99] : [100, 999];
     tiles = generateUniqueTiles(totalTiles, min, max).sort((a, b) => a - b);
 
-    Indices = generateUniqueIndices(Count, totalTiles);
-    s = generateValues(Indices.length);
-    trapIndices = generateTrapIndices(trapCount, totalTiles, Indices);
+    treasureIndices = generateUniqueIndices(treasureCount, totalTiles);
+    treasures = generateTreasureValues(treasureIndices.length);
+    trapIndices = generateTrapIndices(trapCount, totalTiles, treasureIndices);
 
     renderScoreboard();
     renderGrid();
@@ -187,8 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
     turns++;
     const tileBack = tileElement.querySelector('.tile-back');
 
-    if (Indices.includes(index)) {
-      const val = s[Indices.indexOf(index)];
+    if (treasureIndices.includes(index)) {
+      const val = treasures[treasureIndices.indexOf(index)];
       players[currentPlayerIndex].score += val;
       tileBack.classList.add('treasure');
       tileBack.innerHTML = `<img src="${chestImg}" alt="Tesoro" /><div class="value">€${val}</div>`;
@@ -394,6 +394,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-
 
 
