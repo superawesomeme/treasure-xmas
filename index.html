@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Isla del Tesoro — Responsive Fullscreen</title>
+<link href="https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Katibeh&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+<link rel="apple-touch-icon" sizes="180x180" href="/treasure/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/treasure/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/treasure/images/favicon/favicon-16x16.png">
+</head>
+<body>
+  <div id="app">
+    <!-- Setup overlay -->
+    <div id="game-setup">
+<div class="setup-container">
+  <img src="/treasure/images/logo.png"
+       alt="Isla del Tesoro" class="setup-logo" />
+  <form id="setup-form">
+
+          <label for="difficulty">Nivel:</label>
+          <select id="difficulty" name="difficulty" autofocus>
+            <option value="easy">Fácil (1-99)</option>
+            <option value="normal">Normal (100-999)</option>
+          </select>
+          <label for="num-players">Número de jugadores:</label>
+          <select id="num-players">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+          <div id="player-names-container" class="player-names-container"></div>
+          <button type="submit">Inicio</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Game area -->
+    <main class="layout">
+      <section class="board-wrap">
+        <div class="grid" id="grid"></div>
+      </section>
+<aside>
+  <div id="scoreboard" class="scoreboard">
+    <img src="/treasure/images/logo.png"
+         alt="Isla del Tesoro" class="scoreboard-logo" />
+    <div class="players"></div>
+  </div>
+</aside>
+    </main>
+<!-- End-game overlay -->
+<div id="result-overlay" class="result-overlay hidden" aria-hidden="true">
+  <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+  <div class="result-card">
+    <div id="result-title" class="result-title"></div>
+    <button id="restart-btn-overlay" class="restart-btn">Jugar de nuevo</button>
+  </div>
+</div>
+
+    <footer>
+      Created by Shaun Daubney.
+    </footer>
+  </div>
+
+  <button class="fs-btn" id="fs-btn" title="Pantalla completa">⤢</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
